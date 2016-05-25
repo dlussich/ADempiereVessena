@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by Ivan Gunkel (MSM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.invoicy.com.uy" targetNamespace="www.invoicy.com.uy" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="DGITypes_v1.17.xsd"/>
+	<xs:include schemaLocation="InvoiCyTypes_v2.xsd"/>
+	<xs:element name="EnvioCFE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Encabezado">
+					<xs:annotation>
+						<xs:documentation>Identificacion de la Empresa</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EmpCodigo" type="EmpCodigoType">
+								<xs:annotation>
+									<xs:documentation>Código de la Empresa secuencial registrado en el sistema</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EmpPK" type="EmpPK">
+								<xs:annotation>
+									<xs:documentation>Clave del socio</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EmpCK" type="EmpCK">
+								<xs:annotation>
+									<xs:documentation>Clave de comunicación</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CFE">
+					<xs:annotation>
+						<xs:documentation>Informacion del CFE</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CFEItem" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="IdDoc">
+											<xs:annotation>
+												<xs:documentation>Identificacion del CFE</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CFETipoCFE" type="CFEType">
+														<xs:annotation>
+															<xs:documentation>Tipo CFE</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFESerie" type="SerieType">
+														<xs:annotation>
+															<xs:documentation>Serie del CFE</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFENro" type="NroCFEType">
+														<xs:annotation>
+															<xs:documentation>Número de CFE</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEImpresora" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nombre de la impresora que debe ser usada para la impresión automática</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="50"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEImp" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Se debe imprimir el CFE automáticamente. Informar: S o N</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="1"/>
+																<xs:pattern value="S"/>
+																<xs:pattern value="N"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEImpCantidad" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Cantidad de copias a serem impresas</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:integer">
+																<xs:totalDigits value="4"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEFchEmis" type="FechaType">
+														<xs:annotation>
+															<xs:documentation>Fecha Emision Contable del CFE (AAAA-MM-DD)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEPeriodoDesde" type="FechaType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Periodo de Facturacion - Desde (AAAA-MM-DD)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEPeriodoHasta" type="FechaType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Periodo Facturacion - Hasta (AAAA-MM-DD)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEMntBruto" type="xs:integer" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indica el uso de Montos Brutos en Detalle (IVA inc.)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEFmaPago">
+														<xs:annotation>
+															<xs:documentation>Forma de Pago</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:positiveInteger">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEFchVenc" type="FechaType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Fecha de vencimiento</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFETipoTraslado" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indicador Tipo de traslado de bienes</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:positiveInteger">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="3"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEAdenda" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Adenda al CFE</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:length value="500000"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEEfectivo" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Efectivo pago</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="15"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEPesoTotal" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Peso Total</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="15"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFECambio" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Cambio</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="15"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEAcimaUI" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indicador de Acima UI</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="S"/>
+																<xs:pattern value="N"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFENumReferencia" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Número identificador del CFE definido por el ERP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="7"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CAEApodo" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Apodo del rango del CAE</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="40"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEImpFormato" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Formato de la representación impresa. Informar: 0=No especificado, 1=e-Ticket, 2=e-Factura</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:integer">
+																<xs:totalDigits value="1"/>
+																<xs:pattern value="0"/>
+																<xs:pattern value="1"/>
+																<xs:pattern value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEIdCompra" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Número que identifica la compra</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="50"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEExpClaVenta" type="ExpClaVenta" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Cláusula de Venta</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEExpModVenta" type="ExpModVenta" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Modalidad de Venta</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEExpViaTransporte" type="ExpViaTransporte" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Vía de Transporte de la Mercadería</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Emisor">
+											<xs:annotation>
+												<xs:documentation>Datos del Emisor</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="EmiRznSoc" type="RznSocType">
+														<xs:annotation>
+															<xs:documentation>Nombre o Razon Social del Emisor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="EmiComercial" type="NomComercialType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nombre Comercial</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="EmiGiroEmis" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Giro Comercial del Emisor Relevante para el CFE </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="EmiTelefono" type="FonoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Teléfono Emisor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="EmiTelefono2" type="FonoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Teléfono Emisor 2</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="EmiCorreoEmisor" type="MailType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Correo Elect. de contacto en empresa del  emisor </xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="EmiSucursal" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nombre de la Casa Principal /Sucursal</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="20"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="EmiDomFiscal">
+														<xs:annotation>
+															<xs:documentation>Domicilio Fiscal</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="EmiCiudad" type="CiudadType">
+														<xs:annotation>
+															<xs:documentation>Ciudad</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="EmiDepartamento" type="DeptoType">
+														<xs:annotation>
+															<xs:documentation>Departamento</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Receptor">
+											<xs:annotation>
+												<xs:documentation>Datos del Receptor</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="RcpTipoDocRecep" type="DocType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Tipo de Documento del Receptor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RcpCodPaisRecep" type="CodPaisType" fixed="UY" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Código País</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RcpDocRecep" type="NroDocType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nº Documento Receptor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RcpRznSocRecep" type="RznSocType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nombre o Denominación Receptor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RcpDirRecep" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Domicilio del Receptor</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RcpCiudadRecep" type="CiudadType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ciudad Receptor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RcpDeptoRecep" type="DeptoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Departamento Receptor</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RcpCP" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Código Postal</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="5"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RcpCorreoRecep" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Correo Receptor</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="300"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RcpInfAdiRecep" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Información adicional del Receptor</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="150"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RcpDirPaisRecep" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>País de dirección del Receptor</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="30"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RcpDstEntregaRecep" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Dirección del Lugar de Destino de la Entrega</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="100"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RcpEmlArchivos" type="EmlArchivos" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Archivos enviados al receptor por mail</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Totales" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Montos Totales del CFE</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="TotTpoMoneda" type="TipMonType">
+														<xs:annotation>
+															<xs:documentation>Tipo moneda transacción</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotTpoCambio" type="TipCambioType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Tipo de Cambio</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntNoGrv" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Monto No Gravado, menos desc. glb. mas recargos glv (de items no gravados)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntExpoyAsim" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Tot.Mnt exportacion y asimilados menos desc. glb. mas rec. glb. (correspondientes a esos items)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntImpuestoPerc" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total Monto - Impuesto percibido</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntIVaenSusp" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total Monto - IVA em suspenso</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntNetoIvaTasaMin" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Monto Neto IVA Tasa Minima: Suma items grv a tasa min. menos desc. glb. mas rec. glb. (a esos items). Si indic. montos brutos = 1 entonces dividir por (1 + tasa min. vig.)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntNetoIVATasaBasica" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Monto Neto IVA Tasa Basica: Suma items grv a tasa basica menos desc. glb. mas rec. glb. (a esos items). Si indic. montos brutos = 1 entonces dividir por (1 + tasa basica vig.)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntNetoIVAOtra" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total Monto Neto – IVA otra tasa</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotIVATasaMin" type="TasaIVAType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Tasa Mínima IVA</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotIVATasaBasica" type="TasaIVAType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Tasa Basica IVA</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntIVATasaMin" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total IVA – Tasa Mínima</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntIVATasaBasica" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total IVA – Tasa Básica</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntIVAOtra" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total IVA – Otra tasa</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntTotal" type="MontoType">
+														<xs:annotation>
+															<xs:documentation>Total Monto Total</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntTotRetenido" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Total Monto Retenido</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="RetencPercepTot" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Tabla de Retencion/Percepcion</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="RetencPercepTotItem" maxOccurs="20">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="RetPercCodRet" type="CodRetType">
+																				<xs:annotation>
+																					<xs:documentation>Código de Retención/Percepción</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="RetPercValRetPerc" type="MontoType">
+																				<xs:annotation>
+																					<xs:documentation>Valor de la retención/percepción</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TotMontoNF" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Monto no Facturable</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TotMntPagar" type="MontoType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Monto total a pagar</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Detalle" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Detalle del CFE</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Item" maxOccurs="700">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CodItem" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Codificacion del Item</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CodItemItem" maxOccurs="5">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="IteCodiTpoCod">
+																							<xs:annotation>
+																								<xs:documentation>Tipo de código</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:string">
+																									<xs:maxLength value="10"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="IteCodiCod">
+																							<xs:annotation>
+																								<xs:documentation>Codigo de Item, para la Codificacion TpoCod</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:string">
+																									<xs:maxLength value="35"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="IteIndFact">
+																	<xs:annotation>
+																		<xs:documentation>Indicador de Facturacion:
+1: Exento de IVA
+2: Gravado a Tasa Mínima
+3: Gravado a Tasa Básica
+4. Gravado a "Otra Tasa"
+6: Producto o servicio no facturable
+7: Producto o servicio no facturable negativo
+8: Solo para remitos: Ítem a rebajar en remitos. En área de referencia se debe indicar el N° de remito que ajusta
+9: Solo para resguardos: Ítem a anular en resguardos. En área de referencia se debe indicar el N° de resguardo que anular
+10: Exportación y asimiladas
+11: Impuesto percibido
+12: IVA en suspenso</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:positiveInteger">
+																			<xs:totalDigits value="1"/>
+																			<xs:fractionDigits value="0"/>
+																			<xs:minInclusive value="1"/>
+																			<xs:maxInclusive value="12"/>
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="2"/>
+																			<xs:enumeration value="3"/>
+																			<xs:enumeration value="4"/>
+																			<xs:enumeration value="5"/>
+																			<xs:enumeration value="6"/>
+																			<xs:enumeration value="7"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="IteIndAgenteResp" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Indicador Agente/Responsable</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="1"/>
+																			<xs:enumeration value="R"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="IteNomItem">
+																	<xs:annotation>
+																		<xs:documentation>Nombre del ítem</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="80"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="IteDscItem" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Descripción Adicional</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="1000"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="IteCantidad" type="CantType">
+																	<xs:annotation>
+																		<xs:documentation>Cantidad</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IteUniMed">
+																	<xs:annotation>
+																		<xs:documentation>Unidad de medida</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="4"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="ItePrecioUnitario" type="MontoType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Precio unitario</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IteDescuentoPct" type="PctType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Descuento en %</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IteDescuentoMonto" type="MontoType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Monto Descuento</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SubDescuento" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Distribucion del Descuento</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="SubDescuentoItem" maxOccurs="5">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="SubDescDescTipo">
+																							<xs:annotation>
+																								<xs:documentation>Indica si esta en 1 = $ o 2 = %</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="TipoDRType">
+																									<xs:totalDigits value="1"/>
+																									<xs:fractionDigits value="0"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="SubDescDescVal" type="MontoType">
+																							<xs:annotation>
+																								<xs:documentation>Subdescuento – valor</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="IteRecargoPct" type="PctType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Recargo en %</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IteRecargoMnt" type="MontoType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Totaliza los recargos otorgados al item</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SubRecargo" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Tabla de Distribución del Recargo</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="SubRecargoItem" maxOccurs="5">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="SubRecaRecargoTipo">
+																							<xs:annotation>
+																								<xs:documentation>Indica si esta en 1 = $ o 2 = %</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="TipoDRType">
+																									<xs:totalDigits value="1"/>
+																									<xs:fractionDigits value="0"/>
+																									<xs:enumeration value="1"/>
+																									<xs:enumeration value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="SubRecaRecargoVal" type="MontoType">
+																							<xs:annotation>
+																								<xs:documentation>Subrecargo – valor</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="RetencPercep" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Codigo de Retencion / Percepcion</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="RetencPercepItem" maxOccurs="5">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="IteRetPercCodRet" type="CodRetType">
+																							<xs:annotation>
+																								<xs:documentation>Código de Retenciones/Percepciones</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="IteRetPercDscRet" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>Glosa de Retenciones/Percepciones</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:string">
+																									<xs:maxLength value="40"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="IteRetPercTasa" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>Tasa vigente a la fecha del comprobante</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:integer">
+																									<xs:totalDigits value="5"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="IteRetPercMntSujetoaRet" type="MontoType" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>Monto sujeto a retención/percepción</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="IteRetPercValRetPerc" type="MontoType">
+																							<xs:annotation>
+																								<xs:documentation>Valor de la retención/percepción</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="IteRetPerc" type="RetPerc">
+																							<xs:annotation>
+																								<xs:documentation>Retención o Percepción</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="IteMontoItem" type="MontoType">
+																	<xs:annotation>
+																		<xs:documentation>Monto por Linea de Detalle. Corresponde al Monto Neto, a menos que MntBruto Indique lo Contrario </xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SubTotInfo" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Subtotales Informativos</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="STIItem" minOccurs="0" maxOccurs="20">
+														<xs:annotation>
+															<xs:documentation>Subtotales Informativos</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="SubTotNroSTI">
+																	<xs:annotation>
+																		<xs:documentation>Número Subtotal</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:positiveInteger">
+																			<xs:minInclusive value="1"/>
+																			<xs:maxInclusive value="20"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="SubTotGlosaSTI" type="Glosa40Type">
+																	<xs:annotation>
+																		<xs:documentation>Titulo del Subtotal</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SubTotOrdenSTI" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Ubicación para Impresión</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:positiveInteger">
+																			<xs:maxInclusive value="99"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="SubTotValSubtotSTI" type="MontoType">
+																	<xs:annotation>
+																		<xs:documentation>Valor de la línea de subtotal</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DscRcgGlobal" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Descuentos y/o Recargos que aumentan o disminuyen la base del impuesto</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="DRGItem" minOccurs="0" maxOccurs="20">
+														<xs:annotation>
+															<xs:documentation>Descuentos y/o Recargos que aumentan o disminuyen la base del impuesto</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="DscRcgNroLinDR">
+																	<xs:annotation>
+																		<xs:documentation>N° de línea o N° Secuencial</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:positiveInteger">
+																			<xs:minInclusive value="1"/>
+																			<xs:maxInclusive value="20"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="DscRcgTpoMovDR">
+																	<xs:annotation>
+																		<xs:documentation>Tipo de movimiento</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="D">
+																				<xs:annotation>
+																					<xs:documentation>Descuento</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
+																			<xs:enumeration value="R">
+																				<xs:annotation>
+																					<xs:documentation>Recargo</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="DscRcgTpoDR" type="TipoDRType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Tipo Descuento o Recargo</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DscRcgCodDR" type="CodDescRecType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Código del Descuento/Recargo</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DscRcgGlosaDR" type="Glosa50Type" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Descripcion del Descuento o Recargo</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DscRcgValorDR" type="MontoType">
+																	<xs:annotation>
+																		<xs:documentation>Valor del Descuento o Recargo</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DscRcgIndFactDR" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Indicador de facturación 
+1: Exento de IVA
+2: Gravado a Tasa Mínima
+3: Gravado a Tasa Básica
+4. Gravado a "Otra Tasa"
+6: Producto o servicio no facturable
+7: Producto o servicio no facturable negativo
+10: Exportación y asimiladas
+11: Impuesto percibido
+12: IVA en suspenso
+																		</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:positiveInteger">
+																			<xs:minInclusive value="1"/>
+																			<xs:maxInclusive value="12"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="MediosPago" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="MediosPagoItem" maxOccurs="40">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="MedPagNroLinMP">
+																	<xs:annotation>
+																		<xs:documentation>N° Línea o N° Secuencial</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="LineasMP">
+																			<xs:minInclusive value="1"/>
+																			<xs:maxInclusive value="40"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="MedPagCodMP" type="MedioPagoType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Código del Medio de Pago</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MedPagGlosaMP" type="Glosa50Type">
+																	<xs:annotation>
+																		<xs:documentation>Especificación del M. de Pago.</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MedPagOrdenMP" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Ubicación para la impresión</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:integer">
+																			<xs:totalDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="MedPagValorPago" type="MontoType">
+																	<xs:annotation>
+																		<xs:documentation>Valor del Medio de Pago</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Referencia" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Identificacion de otros documentos Referenciados por Documento</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ReferenciaItem" maxOccurs="40">
+														<xs:annotation>
+															<xs:documentation>Identificacion de otros documentos Referenciados por Documento</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="RefNroLinRef">
+																	<xs:annotation>
+																		<xs:documentation>Numero Secuencial de Linea de Referencia</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="LineasInfoRef"/>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="RefIndGlobal" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Indica que se esta Referenciando un Conjunto de Documentos</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:nonNegativeInteger">
+																			<xs:totalDigits value="1"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="RefTpoDocRef" type="CFEType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Tipo CFE de referencia</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="RefSerie" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Serie del CFE de referencia</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="RefNroCFERef" type="NroCFEType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Número del CFE de referencia</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="RefRazonRef" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Razon Explicita por la que se Referencia el Documento</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="90"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="RefFechaCFEref" type="FechaType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Fecha CFE de referencia</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="RefAccion" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Acción sobre el CFE de referencia</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="1"/>
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

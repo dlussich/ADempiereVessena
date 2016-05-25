@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by Ivan Gunkel (MSM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="www.invoicy.com.uy" targetNamespace="www.invoicy.com.uy" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="EmpCK">
+		<xs:annotation>
+			<xs:documentation>Clave de comunicación</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpPK">
+		<xs:annotation>
+			<xs:documentation>Clave del partner</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpCodigoType">
+		<xs:annotation>
+			<xs:documentation>Código de la empresa</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodDGISucursalType">
+		<xs:annotation>
+			<xs:documentation>Código de la sucursal de la DGI</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EstadoSobreRecibidoType">
+		<xs:annotation>
+			<xs:documentation>Estado del sobre del documento recibido. 1 - Sobre Recibido, 2 - Sobre Rechazado</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EstadoRespuestaRecibidoType">
+		<xs:annotation>
+			<xs:documentation>Estado de la respuesta del comprobante recibido. 1 - Confirmado, 2 - Rechazado, 3 - No Respondido</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EstadoResponderRecibidoType">
+		<xs:annotation>
+			<xs:documentation>Respuesta al comprobante. 1 - Confirmado, 2 - Rechazado</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NSUType">
+		<xs:annotation>
+			<xs:documentation>Número Secuencial Único del CFE</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="9999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MsgCodType">
+		<xs:annotation>
+			<xs:documentation>Código del mensaje de respuesta</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MsgDscType">
+		<xs:annotation>
+			<xs:documentation>Mensaje de respuesta</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="SNType">
+		<xs:annotation>
+			<xs:documentation>Sí o No</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoRetornoXMLType">
+		<xs:annotation>
+			<xs:documentation>Formato del XML de retorno. 1 - Envio de CFE, 2 - Entre Empresas</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExpClaVenta">
+		<xs:annotation>
+			<xs:documentation>Cláusula de Venta</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExpModVenta">
+		<xs:annotation>
+			<xs:documentation>Modalidad de Venta. 1 - Régimen General, 2 - Consignación, 3 - Precio Revisable, 4 - Bienes propios aexclaves aduaneros, 90 - Otras transacciones</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExpViaTransporte">
+		<xs:annotation>
+			<xs:documentation>Vía de Transporte de la Mercadería. 1 - Marítimo, 2 - Aéreo, 3 - Terrestre, 9 - Otro</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmlArchivos">
+		<xs:annotation>
+			<xs:documentation>Archivos enviados al receptor por mail. 1 - Buscar de la configuración del InvoiCy, 2 - XML Entre Empresas, 3 - XML Entre Empresas y Representación Impresa, 4 - No enviar mail</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RetPerc">
+		<xs:annotation>
+			<xs:documentation>Retención o Percepción</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="P"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

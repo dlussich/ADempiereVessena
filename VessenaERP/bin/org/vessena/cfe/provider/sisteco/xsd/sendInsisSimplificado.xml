@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:CFE_Adenda xmlns:ns0="http://cfe.dgi.gub.uy" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cfe.dgi.gub.uy CFEEmpresasSisteco_v1.17.xsd ">
+	<ns0:CFE version="1.0" xmlns:ns0="http://cfe.dgi.gub.uy">
+		<ns0:eFact>
+			<ns0:Encabezado>
+				<ns0:IdDoc>
+					<ns0:TipoCFE>111</ns0:TipoCFE>
+					<ns0:FchEmis>2014-10-06</ns0:FchEmis>
+					<ns0:FmaPago>2</ns0:FmaPago>
+				</ns0:IdDoc>
+				<ns0:Receptor>
+					<ns0:TipoDocRecep>2</ns0:TipoDocRecep>
+					<ns0:CodPaisRecep>UY</ns0:CodPaisRecep>
+					<ns0:DocRecep>213827560014</ns0:DocRecep>
+					<ns0:RznSocRecep>Cliente Generico</ns0:RznSocRecep>
+					<ns0:DirRecep/>
+					<ns0:CiudadRecep>MONTEVIDEO</ns0:CiudadRecep>
+					<ns0:DeptoRecep/>
+					<ns0:InfoAdicional>Cliente Generico - CL 001</ns0:InfoAdicional>
+					<ns0:LugarDestEnt>.</ns0:LugarDestEnt>
+				</ns0:Receptor>
+				<ns0:Totales>
+					<ns0:TpoMoneda>UYU</ns0:TpoMoneda>
+					<ns0:TpoCambio>1.000</ns0:TpoCambio>
+					<ns0:MntNetoIvaTasaMin>0.00</ns0:MntNetoIvaTasaMin>
+					<ns0:MntNetoIVATasaBasica>111.50</ns0:MntNetoIVATasaBasica>
+					<ns0:IVATasaMin>10.00</ns0:IVATasaMin>
+					<ns0:IVATasaBasica>22.00</ns0:IVATasaBasica>
+					<ns0:MntIVATasaMin>0.00</ns0:MntIVATasaMin>
+					<ns0:MntIVATasaBasica>24.53</ns0:MntIVATasaBasica>
+					<ns0:MntTotal>136.03</ns0:MntTotal>
+					<ns0:MntTotRetenido>3.77</ns0:MntTotRetenido>
+					<ns0:CantLinDet>1</ns0:CantLinDet>
+					<ns0:RetencPercep>
+						<ns0:CodRet>2183229</ns0:CodRet>
+						<ns0:ValRetPerc>2.79</ns0:ValRetPerc>
+					</ns0:RetencPercep>
+					<ns0:RetencPercep>
+						<ns0:CodRet>2183220</ns0:CodRet>
+						<ns0:ValRetPerc>0.98</ns0:ValRetPerc>
+					</ns0:RetencPercep>
+					<ns0:MontoNF>0.20</ns0:MontoNF>
+					<ns0:MntPagar>140.00</ns0:MntPagar>
+				</ns0:Totales>
+			</ns0:Encabezado>
+			<ns0:Detalle>
+				<ns0:Item>
+					<ns0:NroLinDet>1</ns0:NroLinDet>
+					<ns0:CodItem>
+						<ns0:TpoCod>INT1</ns0:TpoCod>
+						<ns0:Cod>EVSI00</ns0:Cod>
+					</ns0:CodItem>
+					<ns0:IndFact>3</ns0:IndFact>
+					<ns0:IndAgenteResp>R</ns0:IndAgenteResp>
+					<ns0:NomItem>CREMA CORPORAL</ns0:NomItem>
+					<ns0:Cantidad>1.00</ns0:Cantidad>
+					<ns0:UniMed>UN</ns0:UniMed>
+					<ns0:PrecioUnitario>100.00</ns0:PrecioUnitario>
+					<ns0:RecargoPct>11.50</ns0:RecargoPct>
+					<ns0:RecargoMnt>11.50</ns0:RecargoMnt>
+					<ns0:RetencPercep>
+						<ns0:CodRet>2183229</ns0:CodRet>
+						<ns0:Tasa>2.50</ns0:Tasa>
+						<ns0:MntSujetoaRet>111.50</ns0:MntSujetoaRet>
+						<ns0:ValRetPerc>2.79</ns0:ValRetPerc>
+					</ns0:RetencPercep>
+					<ns0:RetencPercep>
+						<ns0:CodRet>2183220</ns0:CodRet>
+						<ns0:Tasa>4.00</ns0:Tasa>
+						<ns0:MntSujetoaRet>24.53</ns0:MntSujetoaRet>
+						<ns0:ValRetPerc>0.98</ns0:ValRetPerc>
+					</ns0:RetencPercep>
+					<ns0:MontoItem>111.50</ns0:MontoItem>
+				</ns0:Item>
+			</ns0:Detalle>
+			<ns0:DscRcgGlobal>
+				<ns0:DRG_Item>
+					<ns0:NroLinDR>1</ns0:NroLinDR>
+					<ns0:TpoMovDR>R</ns0:TpoMovDR>
+					<ns0:TpoDR>1</ns0:TpoDR>
+					<ns0:CodDR>6</ns0:CodDR>
+					<ns0:GlosaDR>Redondeo</ns0:GlosaDR>
+					<ns0:ValorDR>0.20</ns0:ValorDR>
+					<ns0:IndFactDR>6</ns0:IndFactDR>
+				</ns0:DRG_Item>
+			</ns0:DscRcgGlobal>
+		</ns0:eFact>
+	</ns0:CFE>
+	<ns0:Adenda>
+		<Sisteco>
+			<A01>
+				<ImpresoraDestino/>
+				<Numerar>0</Numerar>
+				<Firmar>0</Firmar>
+				<NroDocInterno/>
+				<SerieDocInterna/>
+			</A01>
+			<A03>
+				<PapelTermico>1</PapelTermico>
+				<PublicarSiempre>1</PublicarSiempre>
+				<TextoAImprimir>
+					<ZonaImpresion zona="1">
+						<LineaTexto>Ajuste por redondeo               0.33</LineaTexto>
+						<LineaTexto>Efectivo                    $  1400.00</LineaTexto>
+						<LineaTexto>Pago total                  $  1400.00</LineaTexto>
+						<LineaTexto>CAMBIO                      $     0.00</LineaTexto>
+						<LineaTexto>             Detalle IVA</LineaTexto>
+						<LineaTexto>22%      1147.28     252.39    1399.67</LineaTexto>
+						<LineaTexto>10%         0.00       0.00       0.00</LineaTexto>
+						<LineaTexto>0%          0.00       0.00       0.00</LineaTexto>
+						<LineaTexto>OTRO        0.00       0.00       0.00</LineaTexto>
+						<LineaTexto>------------------------------------</LineaTexto>
+						<LineaTexto>                ADENDA</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto>------------------------------------</LineaTexto>
+						<LineaTexto>   !!! Obtenga su HIPERCARD YA !!!</LineaTexto>
+						<LineaTexto>         Usted hubiese ganado</LineaTexto>
+						<LineaTexto>Millas del Ticket                   18</LineaTexto>
+						<LineaTexto>------------------------------------</LineaTexto>
+						<LineaTexto>Cajera [101000001]:         Cajera Uno</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto/>
+						<LineaTexto>No.Ticket    Fecha     Hora       Caja</LineaTexto>
+						<LineaTexto>000499    01/11/2012 14:47:10      004</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto/>
+						<LineaTexto>#QR#https://www.efactura.dgi.gub.uy/consultaQR/cfe?,210297450018,111,AA,0000260,1400.00,01112012,88g4HiqTTFwM7f3lcewPZZ/5jcc=</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto>      Cod. de Seguridad: 88g4Hi</LineaTexto>
+						<LineaTexto>        Resolucion DGI XX/2012</LineaTexto>
+						<LineaTexto>   Puede verificar comprobante en:</LineaTexto>
+						<LineaTexto>            www.dgi.gub.uy</LineaTexto>
+						<LineaTexto>              IVA al dia</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto>  CAE       Inicio    Fin      Vence</LineaTexto>
+						<LineaTexto>90115001002    AA0000001     AA0010000</LineaTexto>
+						<LineaTexto>LINEA_INICIO_RECUADRO</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto>    Fecha de vencimiento: 31/12/12</LineaTexto>
+						<LineaTexto/>
+						<LineaTexto>LINEA_FIN_RECUADRO</LineaTexto>
+					</ZonaImpresion>
+				</TextoAImprimir>
+			</A03>
+		</Sisteco>
+	</ns0:Adenda>
+</ns0:CFE_Adenda>

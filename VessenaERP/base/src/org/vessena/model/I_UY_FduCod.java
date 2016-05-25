@@ -1,0 +1,280 @@
+/******************************************************************************
+ * Product: Adempiere ERP & CRM Smart Business Solution                       *
+ * Copyright (C) 1999-2007 ComPiere, Inc. All Rights Reserved.                *
+ * This program is free software, you can redistribute it and/or modify it    *
+ * under the terms version 2 of the GNU General Public License as published   *
+ * by the Free Software Foundation. This program is distributed in the hope   *
+ * that it will be useful, but WITHOUT ANY WARRANTY, without even the implied *
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.           *
+ * See the GNU General Public License for more details.                       *
+ * You should have received a copy of the GNU General Public License along    *
+ * with this program, if not, write to the Free Software Foundation, Inc.,    *
+ * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
+ * For the text or an alternative of this public license, you may reach us    *
+ * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
+ * or via info@compiere.org or http://www.compiere.org/license.html           *
+ *****************************************************************************/
+package org.openup.model;
+
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import org.compiere.model.*;
+import org.compiere.util.KeyNamePair;
+
+/** Generated Interface for UY_FduCod
+ *  @author Adempiere (generated) 
+ *  @version Release 3.7.1RC
+ */
+public interface I_UY_FduCod 
+{
+
+    /** TableName=UY_FduCod */
+    public static final String Table_Name = "UY_FduCod";
+
+    /** AD_Table_ID=1000336 */
+    public static final int Table_ID = MTable.getTable_ID(Table_Name);
+
+    KeyNamePair Model = new KeyNamePair(Table_ID, Table_Name);
+
+    /** AccessLevel = 3 - Client - Org 
+     */
+    BigDecimal accessLevel = BigDecimal.valueOf(3);
+
+    /** Load Meta Data */
+
+    /** Column name AD_Client_ID */
+    public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
+
+	/** Get Client.
+	  * Client/Tenant for this installation.
+	  */
+	public int getAD_Client_ID();
+
+    /** Column name AD_Org_ID */
+    public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
+
+	/** Set Organization.
+	  * Organizational entity within client
+	  */
+	public void setAD_Org_ID (int AD_Org_ID);
+
+	/** Get Organization.
+	  * Organizational entity within client
+	  */
+	public int getAD_Org_ID();
+
+    /** Column name ApplyIva */
+    public static final String COLUMNNAME_ApplyIva = "ApplyIva";
+
+	/** Set ApplyIva	  */
+	public void setApplyIva (boolean ApplyIva);
+
+	/** Get ApplyIva	  */
+	public boolean isApplyIva();
+
+    /** Column name CalculateType */
+    public static final String COLUMNNAME_CalculateType = "CalculateType";
+
+	/** Set CalculateType.
+	  * CalculateType
+	  */
+	public void setCalculateType (String CalculateType);
+
+	/** Get CalculateType.
+	  * CalculateType
+	  */
+	public String getCalculateType();
+
+    /** Column name C_Currency_ID */
+    public static final String COLUMNNAME_C_Currency_ID = "C_Currency_ID";
+
+	/** Set Currency.
+	  * The Currency for this record
+	  */
+	public void setC_Currency_ID (int C_Currency_ID);
+
+	/** Get Currency.
+	  * The Currency for this record
+	  */
+	public int getC_Currency_ID();
+
+	public org.compiere.model.I_C_Currency getC_Currency() throws RuntimeException;
+
+    /** Column name Created */
+    public static final String COLUMNNAME_Created = "Created";
+
+	/** Get Created.
+	  * Date this record was created
+	  */
+	public Timestamp getCreated();
+
+    /** Column name CreatedBy */
+    public static final String COLUMNNAME_CreatedBy = "CreatedBy";
+
+	/** Get Created By.
+	  * User who created this records
+	  */
+	public int getCreatedBy();
+
+    /** Column name CreditoContado */
+    public static final String COLUMNNAME_CreditoContado = "CreditoContado";
+
+	/** Set CreditoContado	  */
+	public void setCreditoContado (boolean CreditoContado);
+
+	/** Get CreditoContado	  */
+	public boolean isCreditoContado();
+
+    /** Column name Cuotas */
+    public static final String COLUMNNAME_Cuotas = "Cuotas";
+
+	/** Set Cuotas.
+	  * Cuotas
+	  */
+	public void setCuotas (String Cuotas);
+
+	/** Get Cuotas.
+	  * Cuotas
+	  */
+	public String getCuotas();
+
+    /** Column name Cuotas_2 */
+    public static final String COLUMNNAME_Cuotas_2 = "Cuotas_2";
+
+	/** Set Cuotas_2	  */
+	public void setCuotas_2 (String Cuotas_2);
+
+	/** Get Cuotas_2	  */
+	public String getCuotas_2();
+
+    /** Column name Description */
+    public static final String COLUMNNAME_Description = "Description";
+
+	/** Set Description.
+	  * Optional short description of the record
+	  */
+	public void setDescription (String Description);
+
+	/** Get Description.
+	  * Optional short description of the record
+	  */
+	public String getDescription();
+
+    /** Column name IsActive */
+    public static final String COLUMNNAME_IsActive = "IsActive";
+
+	/** Set Active.
+	  * The record is active in the system
+	  */
+	public void setIsActive (boolean IsActive);
+
+	/** Get Active.
+	  * The record is active in the system
+	  */
+	public boolean isActive();
+
+    /** Column name IsTotalizador */
+    public static final String COLUMNNAME_IsTotalizador = "IsTotalizador";
+
+	/** Set IsTotalizador.
+	  * IsTotalizador
+	  */
+	public void setIsTotalizador (boolean IsTotalizador);
+
+	/** Get IsTotalizador.
+	  * IsTotalizador
+	  */
+	public boolean isTotalizador();
+
+    /** Column name Name */
+    public static final String COLUMNNAME_Name = "Name";
+
+	/** Set Name.
+	  * Alphanumeric identifier of the entity
+	  */
+	public void setName (String Name);
+
+	/** Get Name.
+	  * Alphanumeric identifier of the entity
+	  */
+	public String getName();
+
+    /** Column name OperationCode */
+    public static final String COLUMNNAME_OperationCode = "OperationCode";
+
+	/** Set OperationCode.
+	  * OperationCode
+	  */
+	public void setOperationCode (String OperationCode);
+
+	/** Get OperationCode.
+	  * OperationCode
+	  */
+	public String getOperationCode();
+
+    /** Column name ParentValue */
+    public static final String COLUMNNAME_ParentValue = "ParentValue";
+
+	/** Set Parent Key.
+	  * Key if the Parent
+	  */
+	public void setParentValue (String ParentValue);
+
+	/** Get Parent Key.
+	  * Key if the Parent
+	  */
+	public String getParentValue();
+
+    /** Column name Updated */
+    public static final String COLUMNNAME_Updated = "Updated";
+
+	/** Get Updated.
+	  * Date this record was updated
+	  */
+	public Timestamp getUpdated();
+
+    /** Column name UpdatedBy */
+    public static final String COLUMNNAME_UpdatedBy = "UpdatedBy";
+
+	/** Get Updated By.
+	  * User who updated this records
+	  */
+	public int getUpdatedBy();
+
+    /** Column name UY_FduCod_ID */
+    public static final String COLUMNNAME_UY_FduCod_ID = "UY_FduCod_ID";
+
+	/** Set UY_FduCod_ID.
+	  * UY_FduCod_ID
+	  */
+	public void setUY_FduCod_ID (int UY_FduCod_ID);
+
+	/** Get UY_FduCod_ID.
+	  * UY_FduCod_ID
+	  */
+	public int getUY_FduCod_ID();
+
+    /** Column name UY_FduFile_ID */
+    public static final String COLUMNNAME_UY_FduFile_ID = "UY_FduFile_ID";
+
+	/** Set UY_FduFile_ID	  */
+	public void setUY_FduFile_ID (int UY_FduFile_ID);
+
+	/** Get UY_FduFile_ID	  */
+	public int getUY_FduFile_ID();
+
+	public I_UY_FduFile getUY_FduFile() throws RuntimeException;
+
+    /** Column name Value */
+    public static final String COLUMNNAME_Value = "Value";
+
+	/** Set Search Key.
+	  * Search key for the record in the format required - must be unique
+	  */
+	public void setValue (String Value);
+
+	/** Get Search Key.
+	  * Search key for the record in the format required - must be unique
+	  */
+	public String getValue();
+}

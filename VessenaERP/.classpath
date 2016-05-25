@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/gcm/gcm-server-1.0.2.jar" sourcepath="C:/Users/SBT/.m2/repository/com/ganyo/gcm-server/1.0.2/gcm-server-1.0.2-sources.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/gcm/json-simple-1.1.1.jar"/>
+	<classpathentry kind="src" path="base/src"/>
+	<classpathentry kind="src" path="client/src"/>
+	<classpathentry kind="src" path="JasperReports/src"/>
+	<classpathentry kind="src" path="external"/>
+	<classpathentry kind="src" path="install/src"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/poi-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/poi-excelant-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/poi-ooxml-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/poi-ooxml-schemas-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/poi-scratchpad-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/poi312/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/adempiereTrunk"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/OpenUpDGI"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/uk.co.mmscomputing.device.sane.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/uk.co.mmscomputing.device.twain.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/printLabel.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/RXTXcomm.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/commons-lang3-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/cssparser-0.9.13.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/htmlunit-core-js-2.14.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/httpclient-4.3.2.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/httpcore-4.3.1.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/httpmime-4.3.2.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/jetty-http-8.1.14.v20131031.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/jetty-io-8.1.14.v20131031.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/jetty-util-8.1.14.v20131031.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/jetty-websocket-8.1.14.v20131031.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/nekohtml-1.9.20.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/serializer-2.7.1.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/xalan-2.7.1.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/cron4j-2.2.5/lib/cron4j-2.2.5.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/OpenUpAduana"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/axis.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/axis-ant.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/mail.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/saaj.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/apache.axis/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/htmlunit-2.14/lib/htmlunit-2.14.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/Javaluator-v3.0.0/lib/javaluator-3.0.0.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/sane/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/sane/jfreesane-0.8.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/sane/morenajar/morena.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/jzebra.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-core.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-core-javadoc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-impl-javadoc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-jxc-javadoc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JAXB/jaxb-xjc-javadoc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JDOM/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JDOM/jdom-2.0.5-contrib.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JDOM/jdom-2.0.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JDOM/jdom-2.0.5-junit.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/JDOM/jdom-2.0.5-sources.jar"/>
+	<classpathentry kind="lib" path="/root/Desarrollo/External Jars/java-json.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

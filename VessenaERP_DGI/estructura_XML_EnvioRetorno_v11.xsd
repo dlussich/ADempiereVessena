@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by Ivan Gunkel (MSM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.invoicy.com.uy" targetNamespace="www.invoicy.com.uy" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="DGITypes_v1.17.xsd"/>
+	<xs:include schemaLocation="InvoiCyTypes_v2.xsd"/>
+	<xs:element name="Xmlretorno">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EnvioCFERetorno">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Encabezado">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="EmpCodigo" type="EmpCodigoType">
+											<xs:annotation>
+												<xs:documentation>Código de la Empresa secuencial registrado en el sistema</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="NroLinRetorno" type="xs:integer">
+											<xs:annotation>
+												<xs:documentation>Número de CFEs Retornados</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="MsgCod" type="xs:integer" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Codigo del Mensage de retorno del Consulta</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="MsgDsc" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Mensaje de retorno del Consulta</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4000"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ListaCFE" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Lista de CFEs Retornados</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CFE" maxOccurs="99999">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CFETipo" type="CFEType">
+														<xs:annotation>
+															<xs:documentation>Tipo CFE</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFESerie" type="SerieType">
+														<xs:annotation>
+															<xs:documentation>Serie del Comprobante</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFENro" type="NroCFEType">
+														<xs:annotation>
+															<xs:documentation>Número del Comprobante</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEStatus" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Estado del Comprobante
+1 - No procesado​​;
+2 - En proceso;
+3 - Rechazada;
+4 - En Espera;
+5 - Autorizado;
+6 - Anulado;
+8 - Rechazado DGI.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:integer">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="3"/>
+																<xs:enumeration value="4"/>
+																<xs:enumeration value="5"/>
+																<xs:enumeration value="6"/>
+																<xs:enumeration value="7"/>
+																<xs:enumeration value="8"/>
+																<xs:enumeration value="9"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEEstadoAcuse" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Estado de la comunicacion entre empresas
+1 - Enviado
+2 - Recibido por Receptor
+3 - Confirmado
+4 - Rechazado
+5 - No Enviado
+6 - Observado (solo para CFC)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:integer">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="3"/>
+																<xs:enumeration value="4"/>
+																<xs:enumeration value="5"/>
+																<xs:enumeration value="6"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEMsgCod" type="xs:integer" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Codigo del mensage de retorno del CFE</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFEMsgDsc" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Mensaje de retorno del CFE</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="4000"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEXMLEE" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>XML Entre Empresas del CFE (link, base64 o camino físico del archivo)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="500000"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFERepImpressa" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Representación impresa (link o base64)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="500000"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEQrCode" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>QrCode en base 64</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="500000"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CFEFechaHoraConsulta" type="FechaHoraType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Fecha Hora de Consulta</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="CFENumReferencia">
+														<xs:annotation>
+															<xs:documentation>Número identificador del CFE definido por el ERP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="7"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Erros" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Lista del Erros del CFE</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ErrosItem" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CFEErrCod" type="xs:integer">
+																				<xs:annotation>
+																					<xs:documentation>Codigo del Erro</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CFEErrDesc">
+																				<xs:annotation>
+																					<xs:documentation>Mensajem del Erro</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="4000"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ErrosDGI" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Lista de Erros retonados por DGI</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ErrosDGIItem" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<!--<xs:element name="CFERetCod" type="xs:integer">  - trocado para string na v3 -->
+																			<xs:element name="CFERetCod">
+																				<xs:annotation>
+																					<xs:documentation>Codigo del Erro</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="3"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="CFERetDesc">
+																				<xs:annotation>
+																					<xs:documentation>Mensajem del Erro</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="4000"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
